@@ -35,3 +35,4 @@ Merci de contribuer à SOUQLY !
 | Backend                  | Ouroui Youssef     |
 | Chef de projet           | Souiti Hamza       |
 | Leader/Tests/Deploiement | Lasly Younes       |
+| Conception               | Kourrou Abdelwahab |

@@ -14,6 +14,7 @@ réclamations, audits).
 | Développement Backend (API) | Ouroui Youssef      |
 | Chef de projet / Gestion    | Souiti Hamza        |
 | Leader / Tests / Déploiement| Lasly Younes        |
+| Conception / Design         | Kourrou Abdelwahab  |
 
 ## Stack technique
 
@@ -22,7 +23,7 @@ réclamations, audits).
   - Base de données **SQLite** pour le développement (un fichier
     `database/database.sqlite`), compatible MySQL/MariaDB en production.
   - Tests : PHPUnit — `php artisan test` (61 tests, 216 assertions).
-  
+
 - **Frontend** — React 19 + TypeScript + Vite + Tailwind CSS 4.
   - Routage par état applicatif (`Page`), pas de dépendance externe de
     routing.
