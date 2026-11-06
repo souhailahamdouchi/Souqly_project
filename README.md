@@ -11,10 +11,10 @@ réclamations, audits).
 | Rôle                        | Membre              |
 | --------------------------- | ------------------- |
 | Développement Frontend      | Hamdouchi Souhaila  |
-| Développement Backend (API) | Ouroui Youssef      |
+| Développement Backend (API) | Ouroui Youssef — [@youssefouroui](https://github.com/youssefouroui) |
 | Chef de projet / Gestion    | Souiti Hamza        |
 | Leader / Tests / Déploiement| Lasly Younes        |
-| Conception / Design         | Kourrou Abdelwahab  |
+| Conception / Design         | Kourrou Abdelwahab — [@GUURUUU](https://github.com/GUURUUU) |
 
 ## Stack technique
 
