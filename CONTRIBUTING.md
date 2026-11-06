@@ -32,7 +32,7 @@ Merci de contribuer à SOUQLY !
 | Domaine                  | Responsable        |
 | -------------------------|--------------------|
 | Frontend                 | Hamdouchi Souhaila |
-| Backend                  | Ouroui Youssef — [@youssefouroui](https://github.com/youssefouroui) |
+| Backend                  | Ouroui Youssef     |
 | Chef de projet           | Souiti Hamza       |
 | Leader/Tests/Deploiement | Lasly Younes       |
-| Conception               | Kourrou Abdelwahab — [@GUURUUU](https://github.com/GUURUUU) |
+| Conception               | Kourrou Abdelwahab |
