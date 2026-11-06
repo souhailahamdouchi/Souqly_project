@@ -59,6 +59,16 @@ export default function AppLayout({ children, onNavigate, onSearch }: AppLayoutP
     };
   }, [user?.id]);
 
+  // Badge synchronisé quand une notification est marquée lue dans l'espace client
+  useEffect(() => {
+    const onUnreadChange = (e: Event) => {
+      const detail = (e as CustomEvent<number>).detail;
+      if (typeof detail === 'number') setUnread(Math.max(0, detail));
+    };
+    window.addEventListener('souqly:unread-notifications', onUnreadChange);
+    return () => window.removeEventListener('souqly:unread-notifications', onUnreadChange);
+  }, []);
+
   // FR -> AR -> EN -> FR
   const handleLanguageCycle = () => {
     if (lang === 'fr') changeLanguage('ar');

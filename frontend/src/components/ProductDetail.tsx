@@ -97,7 +97,7 @@ export default function ProductDetail({ productId, onNavigate }: ProductDetailPr
     };
   }, [productId]);
 
-  const gallery = product?.images?.length ? product.images.map((img) => img.path) : [productImage(product as ProductApi)];
+  const gallery = product?.images?.length ? product.images.map((img) => img.path) : [productImage(product)];
   const variants = product ? productVariants(product) : [];
   const currentVariant = variants.find((v) => v.id === variantId) ?? variants[0] ?? null;
 

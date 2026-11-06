@@ -29,9 +29,9 @@ Merci de contribuer à SOUQLY !
 
 ## Répartition de l'équipe
 
-| Domaine            | Responsable        |
-| ------------------ | ------------------ |
-| Frontend           | Hamdouchi Souhaila |
-| Backend            | Ouroui Youssef     |
-| Chef de projet     | Souiti Hamza       |
-| Leader/Tests/Deploiement | Lasly Younes |
+| Domaine                  | Responsable        |
+| -------------------------|--------------------|
+| Frontend                 | Hamdouchi Souhaila |
+| Backend                  | Ouroui Youssef     |
+| Chef de projet           | Souiti Hamza       |
+| Leader/Tests/Deploiement | Lasly Younes       |

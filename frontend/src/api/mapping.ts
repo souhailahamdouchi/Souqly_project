@@ -26,8 +26,8 @@ export function price(api: string | number | undefined | null): number {
   return Number.isFinite(n) ? n : 0;
 }
 
-export function productImage(product: ProductApi): string {
-  const first = product.images?.length ? product.images[0].path : undefined;
+export function productImage(product: ProductApi | null | undefined): string {
+  const first = product?.images?.length ? product.images[0].path : undefined;
   return (
     first ??
     'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80'
@@ -112,11 +112,12 @@ export const VENDOR_STATUS_FR: Record<string, string> = {
   SUSPENDU: 'Suspendu',
 };
 
-/** Next sub-order statuses allowed by the backend state machine. */
+/** Next sub-order statuses allowed by the backend state machine.
+ *  Must mirror VendorOrderController::updateStatus "allowedFrom" map. */
 export const NEXT_SUB_ORDER_STATUS: Record<string, string[]> = {
   EN_ATTENTE: ['CONFIRMEE', 'EN_PREPARATION', 'EXPEDIEE'],
   CONFIRMEE: ['EN_PREPARATION', 'EXPEDIEE', 'LIVREE'],
-  EN_PREPARATION: ['EXPEDIEE', 'LIVREE', 'CONFIRMEE'],
+  EN_PREPARATION: ['EXPEDIEE', 'LIVREE'],
   EXPEDIEE: ['LIVREE'],
   LIVREE: [],
   ANNULEE: [],

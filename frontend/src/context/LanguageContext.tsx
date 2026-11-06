@@ -14,12 +14,30 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+const LANGUAGES: Array<Language> = ['fr', 'ar', 'en'];
+const LANG_STORAGE_KEY = 'souqly-lang';
+
+function initialLanguage(): Language {
+  try {
+    const stored = localStorage.getItem(LANG_STORAGE_KEY);
+    if (stored && (LANGUAGES as string[]).includes(stored)) return stored as Language;
+  } catch {
+    /* storage unavailable: ignoré */
+  }
+  return 'fr';
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Language>('fr');
+  const [lang, setLang] = useState<Language>(initialLanguage);
 
   useEffect(() => {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
+    try {
+      localStorage.setItem(LANG_STORAGE_KEY, lang);
+    } catch {
+      /* storage unavailable: ignoré */
+    }
   }, [lang]);
 
   const changeLanguage = (newLang: Language) => setLang(newLang);

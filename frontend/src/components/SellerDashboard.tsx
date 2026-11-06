@@ -45,7 +45,7 @@ export default function SellerDashboard({ onNavigate }: SellerDashboardProps) {
   const cards = kpis
     ? [
         { label: "Chiffre d'affaires", value: formatMAD(numPrice(kpis.total_sales)), icon: TrendingUp, bg: 'bg-blue-50 text-souqly-blue' },
-        { label: 'Commandes confirmées', value: String(kpis.total_orders), icon: ShoppingBag, bg: 'bg-orange-50 text-souqly-orange' },
+        { label: 'Commandes actives', value: String(kpis.total_orders), icon: ShoppingBag, bg: 'bg-orange-50 text-souqly-orange' },
         { label: 'Commissions', value: formatMAD(numPrice(kpis.total_commissions)), icon: HandCoins, bg: 'bg-purple-50 text-purple-600' },
         { label: 'Revenu net', value: formatMAD(numPrice(kpis.net_earnings)), icon: Wallet, bg: 'bg-teal-50 text-teal-600' },
         { label: 'Commandes à traiter', value: String(kpis.pending_orders), icon: Hourglass, bg: 'bg-yellow-50 text-yellow-600' },

@@ -193,7 +193,14 @@ export default function ClientDashboard({ onNavigate }: ClientDashboardProps) {
       setNotifications((prev) =>
         prev.map((n) => (n.id === id ? { ...n, read_at: new Date().toISOString() } : n)),
       );
-      setUnread((c) => Math.max(0, c - 1));
+      setUnread((c) => {
+        const remaining = Math.max(0, c - 1);
+        // Synchronise le badge de cloche dans l'en-tête (AppLayout)
+        window.dispatchEvent(
+          new CustomEvent<number>('souqly:unread-notifications', { detail: remaining }),
+        );
+        return remaining;
+      });
     } catch {
       toast.error('Impossible de marquer comme lu.');
     }

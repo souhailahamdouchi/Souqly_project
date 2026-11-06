@@ -42,7 +42,7 @@ export function roleOf(user: UserApi | null): UserRole | null {
   if (names.includes('vendor')) return 'vendor';
   if (names.includes('support')) return 'support';
   if (names.includes('carrier')) return 'carrier';
-  return names.includes('client') ? 'client' : 'client';
+  return 'client';
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
