@@ -95,3 +95,19 @@ Codes promo de démonstration : `BIENVENUE10` (-10 %), `SOUQLY50`
 - **Administration** : validation vendeurs/produits/avis, réclamations,
   coupons, commissions & versements, journal d'audit.
 - **Tableau client** annule toute commande « En attente / Confirmée ».
+
+## CI / Déploiement
+
+`.github/workflows/ci.yml` exécute à chaque push/PR vers `main` :
+
+- **Backend** : `composer install`, migrations + seeders, `php artisan test`.
+- **Frontend** : `npm ci`, build TypeScript + Vite (`npm run build`).
+
+Le fichier `frontend/dist/` est un bundle statique déployable sur n'importe
+quel hébergeur (Vercel, Netlify, cPanel…) — pensez alors à définir
+`VITE_API_URL` à la construction et à héberger l'API Laravel derrière HTTPS
+(`APP_URL` + CORS).
+
+## Licence
+
+[MIT](LICENSE) © Équipe SOUQLY.
