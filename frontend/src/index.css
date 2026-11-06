@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* Dark mode via .dark class on <html> (toggled in AppLayout) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-souqly-blue: #1D4ED8;
+  --color-souqly-orange: #F59E0B;
+  --color-souqly-bg: #F8FAFC;
+  --color-souqly-dark: #1E293B;
+}
+
+body {
+  background-color: var(--color-souqly-bg);
+  color: var(--color-souqly-dark);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ============================================================
+   DARK MODE — palette dessinée à la main (pas de "forced dark"
+   du navigateur, qui rendait le site illisible).
+   Principe : on redirige la palette grise de Tailwind sous
+   html.dark, donc surfaces, bordures et textes atténués
+   s'adaptent tous automatiquement.
+   ============================================================ */
+html.dark {
+  color-scheme: dark;
+
+  /* Tokens de marque */
+  --color-souqly-blue: #2E63F0;
+  --color-souqly-bg: #0A1424;      /* fond de page : bleu nuit profond */
+  --color-souqly-dark: #E2E8F0;    /* texte principal : clair */
+
+  /* Palette grise redirigée (bg / border / divide / text-gris) */
+  --color-gray-50: #16233C;        /* panneaux internes */
+  --color-gray-100: #1C2C48;       /* en-têtes de tableaux, avatars */
+  --color-gray-200: #2B3D5D;
+  --color-gray-300: #51627E;       /* icônes atténuées */
+  --color-gray-400: #8095B5;
+  --color-gray-500: #94A9C7;
+  --color-gray-600: #C4D1E3;       /* textes secondaires */
+  --color-gray-700: #E3EAF5;
+  --color-gray-800: #05090F;       /* pied de page : quasi noir */
+  --color-blue-50: #14264A;        /* états actifs (sidebar, chips) */
+  --color-red-50: rgba(248, 113, 113, 0.12); /* champs en erreur */
+}
+
+/* Cartes "blanches" → ton carte sombre (text-white n'est PAS
+   redéfini : les boutons bleus restent lisibles) */
+html.dark .bg-white { background-color: #101A2C; }
+
+/* Bordures d'inputs : plus discrètes que le ton "icône" du gray-300 */
+html.dark .border-gray-300 { border-color: #32465F; }
+
+/* Bouton "Appliquer" (gray-800 → hover gray-900) : inversion au
+   survol pour éviter le noir-sur-noir */
+html.dark .hover\:bg-gray-900:hover { background-color: #E2E8F0; color: #0A1424; }
+
+/* Textes en bleu marque : uniquement l'usage TEXTE est éclairci
+   (les boutons gardent leur fond lisible) */
+html.dark .text-souqly-blue,
+html.dark .hover\:text-souqly-blue:hover,
+html.dark .group:hover .group-hover\:text-souqly-blue { color: #6C97FF; }
